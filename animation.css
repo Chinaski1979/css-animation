@@ -1,0 +1,56 @@
+
+
+
+
+
+
+
+/*	Animations - WebKit only
+------------------------------------------ */
+
+
+.boat {
+	-webkit-animation: rock-boat 3s ease-in-out infinite;  /*animation shorthand. -name -duration -timing-function -itiration...dd*/
+}
+.boat::after {
+	-webkit-animation: steam 4s 2s infinite;
+	/*order of time values is important: animation-duration then animation-delay*/
+}
+
+body {
+	-webkit-animation: bg-move 8s ease-out forwards; /*shorthand -duration -timing-function -fill-mode*/
+}
+
+.mike {
+	-webkit-animation: mike-move 6s 6s ease-out forwards,
+	                   mike-float 3.2s infinite;
+}
+
+/*	Keyframes - WebKit only
+------------------------------------------ */
+
+@-webkit-keyframes rock-boat {
+	50%  { -webkit-transform: rotate(-5deg) translateY(-10px); }
+}
+
+@-webkit-keyframes steam {
+	40%,
+	60%  { opacity: 1; }
+	100% { -webkit-transform: translate(-25%, -35%) rotateZ(20deg); }
+}
+
+@-webkit-keyframes bg-move {
+	0%   { background-position:  100% -560px; }
+	100% { background-position: -350% -260px; }
+}
+
+@-webkit-keyframes mike-move {
+	100% { left: 12%; }
+}
+
+@-webkit-keyframes mike-float {
+	50% { -webkit-transform: rotateZ(5deg) translateY(-5px); }
+}
+
+
+
